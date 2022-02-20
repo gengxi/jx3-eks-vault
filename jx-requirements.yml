@@ -5,26 +5,50 @@ spec:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: tf-jx-up-leech
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    project: "053577192228"
     provider: eks
+    region: ap-northeast-1
+    registry: 053577192228.dkr.ecr.ap-northeast-1.amazonaws.com
   environments:
   - key: dev
+    owner: gengxi
+    repository: jx3-eks-vault
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: 52.197.198.254.nip.io
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: gengxi
   repository: nexus
   secretStorage: vault
-  vault: {}
+  storage:
+  - name: logs
+    url: s3://logs-tf-jx-up-leech-20220220122437374600000008
+  - name: reports
+    url: s3://reports-tf-jx-up-leech-20220220122437366100000005
+  - name: repository
+    url: s3://repository-tf-jx-up-leech-20220220122437371200000006
+  terraform: true
+  vault:
+    aws:
+      dynamoDBRegion: ap-northeast-1
+      dynamoDBTable: vault-unseal-tf-jx-up-leech-MKd1wB9S
+      kmsKeyId: abd54442-4a53-471f-9d19-805b42905f6b
+      kmsRegion: ap-northeast-1
+      s3Bucket: vault-unseal-tf-jx-up-leech-20220220122437360300000004
+      s3Region: ap-northeast-1
   webhook: lighthouse

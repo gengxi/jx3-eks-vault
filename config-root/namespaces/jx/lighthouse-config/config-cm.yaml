@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - gengxi/jx3-eks-vault
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.52.197.198.254.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null

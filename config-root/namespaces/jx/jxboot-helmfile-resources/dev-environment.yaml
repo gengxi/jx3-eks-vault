@@ -33,9 +33,7 @@ spec:
     pipelineUserEmail: "jenkins-x@googlegroups.com"
     prowConfig: Scheduler
     storageLocations:
-      - bucketUrl: "s3://logs-tf-jx-up-leech-20220220122437374600000008"
-        classifier: "logs"
-      - bucketUrl: "s3://reports-tf-jx-up-leech-20220220122437366100000005"
-        classifier: "reports"
-      - bucketUrl: "s3://repository-tf-jx-up-leech-20220220122437371200000006"
-        classifier: "repository"
+      - bucketUrl: s3://logs-tf-jx-up-leech-20220220122437374600000008
+        classifier: logs
+      - bucketUrl: s3://reports-tf-jx-up-leech-20220220122437366100000005
+        classifier: reports
